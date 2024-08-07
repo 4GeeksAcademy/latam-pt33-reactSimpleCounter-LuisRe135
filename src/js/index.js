@@ -6,8 +6,15 @@ import ReactDOM from "react-dom/client";
 import "../styles/index.css";
 
 //import your own components
-import Home from "./component/home.jsx";
 
-//render your react application
-ReactDOM.createRoot(document.getElementById('app')).render(<Home/>);
+import SecondsCounter from "./component/SecondsCounter.jsx";
+let segundero = 0;
+
+
+const segunderoDinamico = setInterval(()=> {
+    ReactDOM.createRoot(document.getElementById('app')).render(<SecondsCounter segundos={segundero} />);
+    segundero++}, 1000);
+
+
+
 
